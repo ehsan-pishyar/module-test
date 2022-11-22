@@ -21,6 +21,6 @@ interface UserDao {
     @Query("SELECT * FROM `User_Table` WHERE id = :userId")
     suspend fun getUserByIdFromDB(userId: Long): UserEntity
 
-    @Delete
+    @Query("DELETE FROM `User_Table`")
     suspend fun deleteUsersFromDB()
 }
