@@ -48,13 +48,14 @@ android {
         }
     }
     buildToolsVersion '33.0.0'
-    dynamicFeatures = [':features:home', ':features:profile']
+    dynamicFeatures = []
 }
 
 dependencies {
 
-    implementation(project(":features:home"))
-    implementation(project(":features:profile"))
+    implementation project(path: ':presentation:profile')
+    implementation project(path: ':presentation:home')
+    implementation project(path: ':presentation:search')
     def glide_version = '4.14.2'
     def palette_version = "1.0.0"
     def nav_version = "2.5.3"

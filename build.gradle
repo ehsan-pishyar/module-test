@@ -12,7 +12,7 @@ buildscript {
         preference_version = '1.2.0'
         timber_version = '5.0.1'
         moshi_version = '2.9.0'
-        nav_version = '2.3.5'
+        nav_version = '2.5.3'
         lifecycle_version = '2.5.1'
         legacySupport_version = '1.0.0'
         retrofit_version = '2.9.0'
