@@ -48,7 +48,7 @@ android {
         }
     }
     buildToolsVersion '33.0.0'
-    dynamicFeatures = []
+    dynamicFeatures = [':features:splash']
 }
 
 dependencies {

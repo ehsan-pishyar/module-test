@@ -13,6 +13,6 @@ fun NavController.navigateToSearch(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.searchScreen() {
     composable(route = searchNavigationRoute) {
-        //SearchScreen()
+
     }
 }

@@ -1,5 +1,6 @@
-package com.example.moduletest.screens
+package com.example.moduletest.screens.main
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
@@ -8,16 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import com.example.moduletest.navigation.Screen
 
+@Preview(name = "Search")
 @Composable
-fun HomeScreen(navController: NavController) {
-
+fun SearchScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -30,35 +28,25 @@ fun HomeScreen(navController: NavController) {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Home Screen",
+                text = "Search Screen",
                 textAlign = TextAlign.Center
             )
 
             Spacer(modifier = Modifier.height(50.dp))
 
-            Button(
-                onClick = { navController.navigate(route = Screen.ProfileScreen.route) }
-            ) {
+            Button(onClick = { Log.e("CLICKED: ", "Go to Home Screen")}) {
                 Text(
-                    text = "Go to Profile"
+                    text = "Go to Home"
                 )
             }
 
             Spacer(modifier = Modifier.height(50.dp))
 
-            Button(
-                onClick = { navController.navigate(route = Screen.SearchScreen.route) }
-            ) {
+            Button(onClick = {Log.e("CLICKED: ", "Go to Profile Screen")}) {
                 Text(
-                    text = "Go to Search"
+                    text = "Go to Profile"
                 )
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewHomeScreen() {
-    HomeScreen(navController = NavController(LocalContext.current))
 }

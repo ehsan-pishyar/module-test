@@ -1,5 +1,6 @@
-package com.example.moduletest.screens
+package com.example.moduletest.screens.main
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
@@ -12,9 +13,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-@Preview(name = "Profile")
 @Composable
-fun ProfileScreen() {
+fun HomeScreen() {
 
     Box(
         modifier = Modifier
@@ -28,25 +28,35 @@ fun ProfileScreen() {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Profile Screen",
+                text = "Home Screen",
                 textAlign = TextAlign.Center
             )
 
             Spacer(modifier = Modifier.height(50.dp))
 
-            Button(onClick = {}) {
+            Button(
+                onClick = { Log.e("CLICKED: ", "Go to Profile Screen") }
+            ) {
                 Text(
-                    text = "Go to Home"
+                    text = "Go to Profile"
                 )
             }
 
             Spacer(modifier = Modifier.height(50.dp))
 
-            Button(onClick = {}) {
+            Button(
+                onClick = { Log.e("CLICKED: ", "Go to Search Screen") }
+            ) {
                 Text(
                     text = "Go to Search"
                 )
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun PreviewHomeScreen() {
+    HomeScreen()
 }

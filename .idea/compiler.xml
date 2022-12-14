@@ -4,6 +4,8 @@
     <bytecodeTargetLevel target="1.7">
       <module name="Module_Test.features.home" target="11" />
       <module name="Module_Test.features.profile" target="11" />
+      <module name="Module_Test.features.settings" target="11" />
+      <module name="Module_Test.features.welcome" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
