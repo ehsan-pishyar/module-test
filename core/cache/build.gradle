@@ -41,6 +41,8 @@ dependencies {
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'androidx.test.ext:junit-ktx:1.1.4'
+    androidTestImplementation 'junit:junit:4.12'
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     // Room

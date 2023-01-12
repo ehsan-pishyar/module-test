@@ -32,51 +32,6 @@ fun NavGraph(
         startNavigation(navController = navController)
         authNavigation(navController = navController)
         mainNavigation(navController = navController)
-
-        // Group of Screens: Start Screens
-        navigation(
-            route = START,
-            startDestination = StartScreens.SplashScreen.route
-        ) {
-            composable(route = StartScreens.SplashScreen.route) {
-                SplashScreen()
-            }
-            composable(route = StartScreens.WelcomeScreen.route) {
-                WelcomeScreen()
-            }
-        }
-
-        // Group of Screens: Auth Screens
-        navigation(
-            route = AUTH,
-            startDestination = AuthScreens.LoginScreen.route
-        ) {
-            composable(route = AuthScreens.LoginScreen.route) {
-                LoginScreen()
-            }
-            composable(route = AuthScreens.RegisterScreen.route) {
-                RegisterScreen()
-            }
-            composable(route = AuthScreens.ForgotPasswordScreen.route) {
-                ForgotPasswordScreen()
-            }
-        }
-
-        // Group of Screens: Main Screens
-        navigation(
-            route = MAIN,
-            startDestination = MainScreens.HomeScreen.route
-        ) {
-            composable(route = MainScreens.HomeScreen.route) {
-                HomeScreen()
-            }
-            composable(route = MainScreens.SearchScreen.route) {
-                SearchScreen()
-            }
-            composable(route = MainScreens.ProfileScreen.route) {
-                ProfileScreen()
-            }
-        }
     }
 }
 
@@ -86,7 +41,9 @@ fun NavGraphBuilder.startNavigation(navController: NavHostController) {
         startDestination = StartScreens.SplashScreen.route
     ) {
         composable(route = StartScreens.SplashScreen.route) {
-            SplashScreen()
+            SplashScreen(
+                toWelcomeScreen = { navController.navigate(StartScreens.WelcomeScreen.route) }
+            )
         }
         composable(route = StartScreens.WelcomeScreen.route) {
             WelcomeScreen()
@@ -114,16 +71,16 @@ fun NavGraphBuilder.authNavigation(navController: NavHostController) {
 fun NavGraphBuilder.mainNavigation(navController: NavHostController) {
     navigation(
         route = MAIN,
-        startDestination = AuthScreens.LoginScreen.route
+        startDestination = MainScreens.HomeScreen.route
     ) {
-        composable(route = AuthScreens.LoginScreen.route) {
-            LoginScreen()
+        composable(route = MainScreens.HomeScreen.route) {
+            HomeScreen()
         }
-        composable(route = AuthScreens.RegisterScreen.route) {
-            RegisterScreen()
+        composable(route = MainScreens.SearchScreen.route) {
+            SearchScreen()
         }
-        composable(route = AuthScreens.ForgotPasswordScreen.route) {
-            ForgotPasswordScreen()
+        composable(route = MainScreens.ProfileScreen.route) {
+            ProfileScreen()
         }
     }
 }
